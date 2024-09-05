@@ -1,38 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmic Reflections</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>The Magic Board: Cosmic Reflections</h1>
-            <p class="philosophy">"The universe is not outside of you. Look inside; everything that you want, you already are." — Rumi</p>
-        </div>
+/* HD Space-themed background with a fixed image */
+body {
+    font-family: 'Georgia', serif;
+    background: url('https://www.solarsystemscope.com/textures/download/8k_stars_milky_way.jpg') no-repeat center center fixed; /* Use an HD space image */
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        <div class="controls">
-            <input type="text" id="textInput" placeholder="Write your cosmic message..." maxlength="50">
-            <select id="animationSelect">
-                <option value="scroll">Scroll</option>
-                <option value="bounce">Bounce</option>
-                <option value="wave">Wave</option>
-                <option value="fade">Fade</option>
-            </select>
-            <input type="range" id="speedControl" min="1" max="10" value="5">
-            <label for="speedControl">Animation Speed</label>
-            <button id="sendButton">Send to OLED</button>
-        </div>
+.container {
+    width: 80%;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for content */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
 
-        <div class="quote-section">
-            <p id="randomQuote">"Space is the breath of art." — Frank Lloyd Wright</p>
-        </div>
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        <p id="statusMessage"></p>
-    </div>
+h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: glow 2s infinite alternate;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.philosophy {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #aad4f3;
+    margin-bottom: 40px;
+    opacity: 0.8;
+    animation: fadeIn 3s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.controls {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 153, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+input[type="text"], select, input[type="range"], button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+input[type="text"] {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-bottom: 2px solid #00ccff;
+}
+
+input[type="text"]::placeholder {
+    color: #aad4f3;
+}
+
+select, input[type="range"] {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+button {
+    background: linear-gradient(135deg, #00bfff, #1e90ff);
+    color: white;
+    cursor: pointer;
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1e90ff, #00bfff);
+    box-shadow: 0 0 15px #00ccff, 0 0 25px #00bfff;
+}
+
+#randomQuote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 30px;
+    opacity: 0.8;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
