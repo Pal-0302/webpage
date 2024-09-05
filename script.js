@@ -3,8 +3,6 @@ document.getElementById('sendButton').addEventListener('click', () => {
     const animation = document.getElementById('animationSelect').value;
     const speed = document.getElementById('speedControl').value;
 
-    // This is where you send the data to your ESP8266/ESP32 via an API
-    // Example placeholder code (you need to set up the ESP with an API endpoint)
     const data = { message, animation, speed };
 
     fetch('http://your-esp-url/send', {
@@ -23,3 +21,18 @@ document.getElementById('sendButton').addEventListener('click', () => {
         document.getElementById('statusMessage').textContent = 'Error sending message.';
     });
 });
+
+// Philosophical quote logic
+const quotes = [
+    "Space is the breath of art. — Frank Lloyd Wright",
+    "The universe is under no obligation to make sense to you. — Neil deGrasse Tyson",
+    "The cosmos is within us. — Carl Sagan",
+    "In the beginning, there was nothing, which exploded. — Terry Pratchett",
+    "The nitrogen in our DNA, the calcium in our teeth, the iron in our blood were made in stars. — Carl Sagan"
+];
+
+const quoteElement = document.getElementById('randomQuote');
+setInterval(() => {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteElement.textContent = randomQuote;
+}, 7000); // Change quote every 7 seconds
