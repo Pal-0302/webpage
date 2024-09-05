@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Magic Board</title>
+    <title>Cosmic Reflections</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>The Magic Board</h1>
+        <div class="header">
+            <h1>The Magic Board: Cosmic Reflections</h1>
+            <p class="philosophy">"The universe is not outside of you. Look inside; everything that you want, you already are." — Rumi</p>
+        </div>
+
         <div class="controls">
-            <input type="text" id="textInput" placeholder="Enter your message here" maxlength="50">
+            <input type="text" id="textInput" placeholder="Write your cosmic message..." maxlength="50">
             <select id="animationSelect">
                 <option value="scroll">Scroll</option>
                 <option value="bounce">Bounce</option>
@@ -18,9 +22,14 @@
                 <option value="fade">Fade</option>
             </select>
             <input type="range" id="speedControl" min="1" max="10" value="5">
-            <label for="speedControl">Speed</label>
+            <label for="speedControl">Animation Speed</label>
             <button id="sendButton">Send to OLED</button>
         </div>
+
+        <div class="quote-section">
+            <p id="randomQuote">"Space is the breath of art." — Frank Lloyd Wright</p>
+        </div>
+
         <p id="statusMessage"></p>
     </div>
 
