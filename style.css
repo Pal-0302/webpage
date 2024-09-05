@@ -1,7 +1,7 @@
-/* Space-themed background with stars and nebulae */
+/* HD Space-themed background with a fixed image */
 body {
     font-family: 'Georgia', serif;
-    background: url('https://www.solarsystemscope.com/textures/download/2k_stars.jpg') no-repeat center center fixed;
+    background: url('https://www.solarsystemscope.com/textures/download/8k_stars_milky_way.jpg') no-repeat center center fixed; /* Use an HD space image */
     background-size: cover;
     color: #fff;
     margin: 0;
@@ -15,7 +15,7 @@ body {
 .container {
     width: 80%;
     max-width: 700px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for content */
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
@@ -102,3 +102,19 @@ button {
 
 button:hover {
     background: linear-gradient(135deg, #1e90ff, #00bfff);
+    box-shadow: 0 0 15px #00ccff, 0 0 25px #00bfff;
+}
+
+#randomQuote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 30px;
+    opacity: 0.8;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
